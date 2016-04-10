@@ -3,8 +3,7 @@ class FlikrClient
   attr_accessor :key, :id
 
   def initialize
-    get_key
-    get_user_id
+    get_keys
   end
 
   def test_api(uri)
@@ -16,12 +15,10 @@ class FlikrClient
 
   private
 
-  def get_key
-    @key = YAML.load_file('api_key.yml')['key']
-  end
-
-  def get_user_id
-    @id = YAML.load_file('api_key.yml')['user_id']
+  def get_keys
+    keys = YAML.load_file('api_key.yml')
+    @key = keys['key']
+    @id = keys['user_id']
   end
 
 end
