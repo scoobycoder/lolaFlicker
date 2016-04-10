@@ -30,9 +30,9 @@ describe 'API' do
     response = @client.test_api(uri)
     photo_info = JSON.parse(response.body)
     image_url = photo_info['photo']['urls']['url']#['_content']
-    p "=============="
+    p "============="
     p image_url
-    p "=============="
+    p "============="
     expect(response.kind_of? Net::HTTPSuccess)
   end
 
